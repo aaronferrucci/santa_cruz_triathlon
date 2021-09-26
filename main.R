@@ -52,7 +52,7 @@ relay_2021$variable <- factor(relay_2021$variable, rev(c("Swim", "T1", "Bike", "
 ybreaks <- seq(to_seconds("0:00:00"), to_seconds("4:00:00"), to_seconds("0:30:00"))
 
 p <- ggplot(relay_2021, aes(fill=variable, y=value, x=Team.Name)) +
-  theme(axis.text.x = element_text(angle = 90, hjust=0.5)) +
+  theme(axis.text.x = element_text(angle = 90, hjust=0.95, vjust=0.4)) +
   xlab("Team") + ylab("Time (H:MM)") +
   scale_y_continuous(breaks=ybreaks, labels=time_fmt(ybreaks)) +
   geom_bar(position="stack", stat="identity")
