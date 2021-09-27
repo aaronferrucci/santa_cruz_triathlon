@@ -56,16 +56,4 @@ p <- ggplot(relay_2021, aes(fill=variable, y=value, x=Team.Name)) +
   xlab("Team") + ylab("Time (H:MM)") +
   scale_y_continuous(breaks=ybreaks, labels=time_fmt(ybreaks)) +
   geom_bar(position="stack", stat="identity")
-
-# xbreaks <- seq(to_seconds("8:30:00"), to_seconds("13:30:00"), to_seconds("0:30:00"))
-# p1 <- ggplot(relay_2019, aes(color=Team)) +
-#   scale_y_continuous(breaks=0.5 + seq(0, 2), labels=c("Swim", "Bike", "Run"), limits=c(0, NA)) +
-#   theme(axis.text.y = element_text(angle = 90, hjust=0.5)) +
-#   scale_x_continuous(breaks=xbreaks, labels=time_fmt(xbreaks)) +
-#   xlab("Time") + ylab("Segment") +
-#   facet_grid(Division ~ ., as.table = FALSE) +
-#   geom_segment(aes(x=Start, y=Start.d, xend=Swim, yend=Swim.d)) +
-#   geom_segment(aes(x=Swim, y=Swim.d, xend=T1, yend=T1.d), color="gray") +
-#   geom_segment(aes(x=T1, y=T1.d, xend=Bike, yend=Bike.d)) +
-#   geom_segment(aes(x=Bike, y=Bike.d, xend=T2, yend=T2.d), color="gray") +
-#   geom_segment(aes(x=T2, y=T2.d, xend=Run, yend=Run.d))
+print(p)
